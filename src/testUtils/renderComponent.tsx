@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { getDefaultProvider } from 'ethers';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import { Web3Wrapper } from 'clients/web3';
@@ -47,7 +47,7 @@ const renderComponent = (
           <AuthContext.Provider value={defaultAuthContextValues}>
             <SuccessfulTransactionModalProvider>
               <DisableLunaUstWarningProvider>
-                <BrowserRouter>
+                <HashRouter>
                   <ToastContainer />
 
                   <Switch>
@@ -56,7 +56,7 @@ const renderComponent = (
                       component={typeof children === 'function' ? children : () => children}
                     />
                   </Switch>
-                </BrowserRouter>
+                </HashRouter>
               </DisableLunaUstWarningProvider>
             </SuccessfulTransactionModalProvider>
           </AuthContext.Provider>
