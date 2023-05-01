@@ -75,6 +75,7 @@ module.exports = {
     'react/jsx-wrap-multilines': 0,
     'generator-star-spacing': 0,
     'consistent-return': 0,
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
   },
   settings: {
     'import/resolver': {
