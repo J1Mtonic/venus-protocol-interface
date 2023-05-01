@@ -3,11 +3,11 @@ import config from 'config';
 import { TransactionCategory, TransactionEvent } from 'types';
 import { convertTokensToWei, getVTokenByAddress } from 'utilities';
 
-import { xvs } from 'constants/contracts/addresses/vBepTokens.json';
+import vBepTokenAddresses from 'constants/contracts/addresses/vBepTokens.json';
 
 import { TransactionResponse } from './types';
 
-const MAIN_POOL_VXVS_ADDRESS = xvs[config.chainId];
+const MAIN_POOL_VXVS_ADDRESS = vBepTokenAddresses.xvs[config.chainId];
 
 const formatTransaction = ({
   amount,

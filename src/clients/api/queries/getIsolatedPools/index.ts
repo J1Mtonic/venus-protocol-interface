@@ -1,6 +1,6 @@
-import { abi as comptrollerAbi } from '@venusprotocol/isolated-pools/artifacts/contracts/Comptroller.sol/Comptroller.json';
-import { abi as poolLensAbi } from '@venusprotocol/isolated-pools/artifacts/contracts/Lens/PoolLens.sol/PoolLens.json';
-import { abi as rewardsDistributorAbi } from '@venusprotocol/isolated-pools/artifacts/contracts/Rewards/RewardsDistributor.sol/RewardsDistributor.json';
+import comptrollerInfo from '@venusprotocol/isolated-pools/artifacts/contracts/Comptroller.sol/Comptroller.json';
+import poolLensInfo from '@venusprotocol/isolated-pools/artifacts/contracts/Lens/PoolLens.sol/PoolLens.json';
+import rewardsDistributorInfo from '@venusprotocol/isolated-pools/artifacts/contracts/Rewards/RewardsDistributor.sol/RewardsDistributor.json';
 import { ContractCallContext, ContractCallResults } from 'ethereum-multicall';
 import _cloneDeep from 'lodash/cloneDeep';
 import { Token } from 'types';
@@ -75,7 +75,7 @@ const getIsolatedPools = async ({
   const poolLensCallContext: ContractCallContext = {
     reference: 'poolLens',
     contractAddress: poolLensContract.address,
-    abi: poolLensAbi,
+    abi: poolLensInfo.abi,
     calls: poolLensCalls,
   };
 
@@ -100,7 +100,7 @@ const getIsolatedPools = async ({
     return {
       reference: result.comptroller,
       contractAddress: result.comptroller,
-      abi: comptrollerAbi,
+      abi: comptrollerInfo.abi,
       calls,
     };
   });
@@ -165,7 +165,7 @@ const getIsolatedPools = async ({
         rewardsDistributorAddress => ({
           reference: rewardsDistributorAddress,
           contractAddress: rewardsDistributorAddress,
-          abi: rewardsDistributorAbi,
+          abi: rewardsDistributorInfo.abi,
           calls: [
             {
               reference: 'rewardToken',

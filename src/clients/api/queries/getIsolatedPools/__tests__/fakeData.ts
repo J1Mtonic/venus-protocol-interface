@@ -1,5 +1,5 @@
 import { abi as comptrollerAbi } from '@venusprotocol/isolated-pools/artifacts/contracts/Comptroller.sol/Comptroller.json';
-import { abi as poolLensAbi } from '@venusprotocol/isolated-pools/artifacts/contracts/Lens/PoolLens.sol/PoolLens.json';
+import poolLensInfo from '@venusprotocol/isolated-pools/artifacts/contracts/Lens/PoolLens.sol/PoolLens.json';
 import { abi as rewardsDistributorAbi } from '@venusprotocol/isolated-pools/artifacts/contracts/Rewards/RewardsDistributor.sol/RewardsDistributor.json';
 import { BigNumber as BN } from 'ethers';
 
@@ -209,7 +209,7 @@ export const fakeMulticallResponse1 = {
       originalContractCallContext: {
         reference: 'poolLens',
         contractAddress: '0x7d6A1a595dCa742B4FF4Fb8684e3F018C3c0bEC0',
-        abi: poolLensAbi,
+        abi: poolLensInfo.abi,
         calls: [
           {
             reference: 'vTokenUnderlyingPriceAll',

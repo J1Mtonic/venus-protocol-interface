@@ -1,4 +1,4 @@
-import { abi as poolLensAbi } from '@venusprotocol/isolated-pools/artifacts/contracts/Lens/PoolLens.sol/PoolLens.json';
+import poolLensInfo from '@venusprotocol/isolated-pools/artifacts/contracts/Lens/PoolLens.sol/PoolLens.json';
 import { ContractCallContext, ContractCallResults } from 'ethereum-multicall';
 import { getContractAddress } from 'utilities';
 
@@ -83,7 +83,7 @@ const getPendingRewardGroups = async ({
     contractCallContext.push({
       reference: 'poolLens',
       contractAddress: poolLensAddress,
-      abi: poolLensAbi,
+      abi: poolLensInfo.abi,
       calls: isolatedPoolComptrollerAddresses.map(isolatedPoolComptrollerAddress => ({
         reference: 'getPendingRewards',
         methodName: 'getPendingRewards',

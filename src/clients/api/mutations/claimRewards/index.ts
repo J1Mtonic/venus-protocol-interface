@@ -1,4 +1,4 @@
-import { abi as rewardsDistributorAbi } from '@venusprotocol/isolated-pools/artifacts/contracts/Rewards/RewardsDistributor.sol/RewardsDistributor.json';
+import rewardsDistributorInfo from '@venusprotocol/isolated-pools/artifacts/contracts/Rewards/RewardsDistributor.sol/RewardsDistributor.json';
 import { ethers } from 'ethers';
 import { getContractAddress } from 'utilities';
 
@@ -71,7 +71,9 @@ const claimRewards = async ({
     }
 
     // rewardsDistributor
-    const executingInterface = new ethers.utils.Interface(JSON.stringify(rewardsDistributorAbi));
+    const executingInterface = new ethers.utils.Interface(
+      JSON.stringify(rewardsDistributorInfo.abi),
+    );
 
     const callData = executingInterface.encodeFunctionData('claimRewardToken(address,address[])', [
       accountAddress,
