@@ -8,6 +8,9 @@ import useTokenApproval from 'hooks/useTokenApproval';
 
 jest.mock('utilities/isFeatureEnabled');
 jest.mock('hooks/useTokenApproval');
+jest.mock('wagmi/connectors/walletConnect', () =>
+  jest.createMockFromModule('wagmi/connectors/walletConnect'),
+);
 
 const useTokenApprovalOriginalOutput = useTokenApproval(
   // These aren't used since useTokenApproval is mocked
