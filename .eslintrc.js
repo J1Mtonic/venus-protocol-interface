@@ -5,7 +5,12 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   plugins: ['import', 'react', 'jsx-a11y', 'prettier'],
-  extends: ['airbnb', 'airbnb-typescript', 'plugin:@typescript-eslint/recommended'],
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended',
+  ],
   parserOptions: {
     project: './tsconfig.eslint.json',
   },
@@ -18,7 +23,6 @@ module.exports = {
     'no-confusing-arrow': 0,
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-indent': 0,
-
     /* airbnb rules */
     'implicit-arrow-linebreak': 0,
     'import/prefer-default-export': 0,
@@ -34,7 +38,12 @@ module.exports = {
       },
     ],
     'no-param-reassign': 0,
-    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+    'no-plusplus': [
+      'error',
+      {
+        allowForLoopAfterthoughts: true,
+      },
+    ],
     'operator-linebreak': 0,
     'react/prop-types': 0,
     'react/default-props-match-prop-types': 0,
@@ -57,7 +66,12 @@ module.exports = {
     // Custom
     'import/no-named-as-default': 0,
     'import/export': 0,
-    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_.+' }],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '^_.+',
+      },
+    ],
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
@@ -75,7 +89,12 @@ module.exports = {
     'react/jsx-wrap-multilines': 0,
     'generator-star-spacing': 0,
     'consistent-return': 0,
-    'react/no-unknown-property': ['error', { ignore: ['css'] }],
+    'react/no-unknown-property': [
+      'error',
+      {
+        ignore: ['css'],
+      },
+    ],
   },
   settings: {
     'import/resolver': {

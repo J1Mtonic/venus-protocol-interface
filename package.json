@@ -21,8 +21,8 @@
     "generate-contract-types": "rimraf src/types/contracts && typechain --target=ethers-v5 --out-dir=src/types/contracts 'src/constants/contracts/abis/*.json'",
     "generate-pancake-swap-tokens": "node ./scripts/generatePancakeSwapTokens.mjs && yarn prettier --write ./src/constants/tokens/swap/mainnetPancakeSwapTokens.ts",
     "postinstall": "yarn generate-contract-types && yarn generate-subgraph-types && yarn generate-pancake-swap-tokens && genversion --es6 --semi src/constants/version.ts",
-    "storybook": "STORYBOOK=true start-storybook -p 6006 -s public",
-    "build-storybook": "STORYBOOK=true build-storybook -s public",
+    "storybook": "STORYBOOK=true storybook dev -p 6006 -s public",
+    "build-storybook": "STORYBOOK=true storybook build -s public",
     "loki": "loki update --reactUri file:./storybook-static",
     "regression": "reg-suit run"
   },
@@ -83,12 +83,13 @@
     "@graphql-codegen/client-preset": "^1.2.3",
     "@graphql-codegen/typed-document-node": "2.3.10",
     "@graphql-codegen/typescript-operations": "2.5.10",
-    "@storybook/addon-actions": "6.4.9",
-    "@storybook/addon-essentials": "6.4.9",
-    "@storybook/addon-links": "6.4.9",
-    "@storybook/node-logger": "6.4.9",
-    "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "6.4.9",
+    "@storybook/addon-actions": "7.0.17",
+    "@storybook/addon-essentials": "7.0.17",
+    "@storybook/addon-links": "7.0.17",
+    "@storybook/node-logger": "7.0.17",
+    "@storybook/preset-create-react-app": "^7.0.17",
+    "@storybook/react": "7.0.17",
+    "@storybook/react-webpack5": "7.0.17",
     "@stylelint/postcss-css-in-js": "0.37.2",
     "@testing-library/dom": "^8.13.0",
     "@testing-library/react-hooks": "^8.0.1",
@@ -112,6 +113,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-storybook": "^0.6.12",
     "fs": "^0.0.1-security",
     "genversion": "^3.1.1",
     "history": "^5.3.0",
@@ -121,7 +123,7 @@
     "lint-staged": "^12.3.3",
     "loki": "^0.31.0",
     "msw": "^0.36.8",
-    "msw-storybook-addon": "^1.6.0",
+    "msw-storybook-addon": "^1.8.0",
     "node-fetch": "^3.3.1",
     "npm": "^9.6.5",
     "path": "^0.12.7",
@@ -135,6 +137,7 @@
     "reg-publish-s3-plugin": "^0.11.0",
     "reg-suit": "^0.11.1",
     "rimraf": "^4.1.2",
+    "storybook": "7.0.17",
     "stylelint": "^14.3.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^18.3.0",
@@ -188,7 +191,7 @@
     }
   },
   "msw": {
-    "workerDirectory": "public"
+    "workerDirectory": "build"
   },
   "jest": {
     "testMatch": [
