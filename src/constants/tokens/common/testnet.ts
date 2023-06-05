@@ -2,7 +2,7 @@ import { Token } from 'types';
 
 import aave from 'assets/img/tokens/aave.svg';
 import ada from 'assets/img/tokens/ada.svg';
-import alpaca from 'assets/img/tokens/alpaca.svg';
+import alpaca from 'assets/img/tokens/alpaca.png';
 import ankr from 'assets/img/tokens/ankr.svg';
 import ankrBNB from 'assets/img/tokens/ankrBNB.svg';
 import bifi from 'assets/img/tokens/bifi.png';
