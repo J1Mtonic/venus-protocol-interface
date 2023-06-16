@@ -48,7 +48,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const { disconnectAsync } = useDisconnect();
   const { data: signer } = useSigner();
   const provider = useProvider();
-  const { address, status } = useAccount();
+  const { address, status, isConnected } = useAccount();
 
   const { data: accountAuth } = useGetIsAddressAuthorized(address || '', {
     enabled: address !== undefined,
@@ -91,7 +91,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     closeAuthModal();
   };
 
-  const accountAddress = address && accountAuth?.authorized ? address : '';
+  const accountAddress = isConnected && address && accountAuth?.authorized ? address : '';
 
   return (
     <AuthContext.Provider
