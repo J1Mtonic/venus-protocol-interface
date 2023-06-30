@@ -45,6 +45,7 @@ export interface MarketUiProps {
   supplyChartData: ApyChartProps['data'];
   borrowChartData: ApyChartProps['data'];
   interestRateChartData: InterestRateChartProps['data'];
+  utilizationRate: number;
   isInterestRateChartDataLoading: boolean;
   poolComptrollerAddress: string;
   asset?: Asset;
@@ -58,6 +59,7 @@ export const MarketUi: React.FC<MarketUiProps> = ({
   borrowChartData,
   isInterestRateChartDataLoading,
   interestRateChartData,
+  utilizationRate,
 }) => {
   const { t } = useTranslation();
   const styles = useStyles();
@@ -67,15 +69,8 @@ export const MarketUi: React.FC<MarketUiProps> = ({
 
   const { openOperationModal, OperationModal } = useOperationModal();
 
-  const { currentUtilizationRate, dailySupplyInterestsCents, dailyBorrowInterestsCents } = useMemo(
+  const { dailySupplyInterestsCents, dailyBorrowInterestsCents } = useMemo(
     () => ({
-      currentUtilizationRate:
-        asset &&
-        asset.borrowBalanceTokens
-          .div(asset.cashTokens.plus(asset.borrowBalanceTokens).minus(asset.reserveTokens))
-          .multipliedBy(100)
-          .dp(0)
-          .toNumber(),
       // Calculate daily interests for suppliers and borrowers. Note that we don't
       // use BigNumber to calculate these values, as this would slow down
       // calculation a lot while the end result doesn't need to be extremely
@@ -399,7 +394,7 @@ export const MarketUi: React.FC<MarketUiProps> = ({
               <div css={styles.apyChart}>
                 <InterestRateChart
                   data={interestRateChartData}
-                  currentUtilizationRate={currentUtilizationRate}
+                  currentUtilizationRate={utilizationRate}
                 />
               </div>
             )}
@@ -480,6 +475,7 @@ const Market: React.FC<MarketProps> = ({
       {...chartData}
       isInterestRateChartDataLoading={isInterestRateChartDataLoading}
       interestRateChartData={interestRateChartData.apySimulations}
+      utilizationRate={100}
     />
   );
 };

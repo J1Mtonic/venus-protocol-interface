@@ -1,8 +1,8 @@
 import BigNumber from 'bignumber.js';
 import { ContractCallContext, ContractCallResults } from 'ethereum-multicall';
 
-import interestModelAbi from 'constants/contracts/abis/interestModel.json';
-import interestModelAbiV2 from 'constants/contracts/abis/interestModelV2.json';
+import interestRateModelAbi from 'constants/contracts/abis/interestRateModel.json';
+import interestRateModelV2Abi from 'constants/contracts/abis/interestRateModelV2.json';
 
 import formatToApySnapshots from './formatToApySnapshots';
 import { GetVTokenApySimulationsOutput, GetVTokenInterestRatesInput } from './types';
@@ -59,7 +59,7 @@ const getVTokenApySimulations = async ({
   const contractCallContext: ContractCallContext = {
     reference: 'getVTokenRates',
     contractAddress: interestRateModelContractAddress,
-    abi: isIsolatedPoolMarket ? interestModelAbiV2 : interestModelAbi,
+    abi: isIsolatedPoolMarket ? interestRateModelV2Abi : interestRateModelAbi,
     calls,
   };
 

@@ -1,7 +1,7 @@
 import { ContractCallResults } from 'ethereum-multicall';
 
 import bep20Abi from 'constants/contracts/abis/bep20.json';
-import interestModelAbi from 'constants/contracts/abis/interestModel.json';
+import interestRateModelAbi from 'constants/contracts/abis/interestRateModel.json';
 import pancakeSwapPairAbi from 'constants/contracts/abis/pancakeSwapPair.json';
 import poolLensAbi from 'constants/contracts/abis/poolLens.json';
 import vaiVaultAbi from 'constants/contracts/abis/vaiVault.json';
@@ -231,7 +231,7 @@ const interestRateModel: {
         originalContractCallContext: {
           reference: 'getVTokenRates',
           contractAddress: '0xa166Ca91a570747708a318A771F0C9AB84DD984b',
-          abi: interestModelAbi,
+          abi: interestRateModelAbi,
           calls: [
             {
               reference: 'getBorrowRate',
