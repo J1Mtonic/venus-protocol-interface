@@ -4,7 +4,7 @@ import { BscChainId, Environment } from 'types';
 import { BSC_SCAN_URLS } from 'constants/bsc';
 import { API_ENDPOINT_URLS, RPC_URLS } from 'constants/endpoints';
 
-import { MAINNET_SUBGRAPH_URL, TESTNET_SUBGRAPH_URL } from './codegen';
+import { MAINNET_SUBGRAPH_URL, TESTNET_SUBGRAPH_URL } from './codegenSubgraph';
 
 export interface Config {
   environment: Environment;

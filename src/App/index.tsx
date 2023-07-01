@@ -1,3 +1,4 @@
+import { ApolloProvider } from '@apollo/client';
 import { Layout, ResetScrollOnRouteChange } from 'components';
 import React from 'react';
 import { QueryClientProvider } from 'react-query';
@@ -6,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 
 import 'assets/styles/App.scss';
 import { queryClient } from 'clients/api';
+import { apolloClient } from 'clients/ethGraphQl';
 import { Web3Wrapper } from 'clients/web3';
 import { AnalyticsProvider } from 'context/Analytics';
 import { AuthProvider } from 'context/AuthContext';
@@ -19,27 +21,29 @@ import Switch from './Switch';
 const App = () => (
   <ErrorLoggerProvider>
     <Web3Wrapper>
-      <QueryClientProvider client={queryClient}>
-        <MuiThemeProvider>
-          <AuthProvider>
-            <AnalyticsProvider>
-              <SuccessfulTransactionModalProvider>
-                <DisableLunaUstWarningProvider>
-                  <BrowserRouter>
-                    <ToastContainer />
+      <ApolloProvider client={apolloClient}>
+        <QueryClientProvider client={queryClient}>
+          <MuiThemeProvider>
+            <AuthProvider>
+              <AnalyticsProvider>
+                <SuccessfulTransactionModalProvider>
+                  <DisableLunaUstWarningProvider>
+                    <BrowserRouter>
+                      <ToastContainer />
 
-                    <Layout>
-                      <ResetScrollOnRouteChange />
+                      <Layout>
+                        <ResetScrollOnRouteChange />
 
-                      <Switch />
-                    </Layout>
-                  </BrowserRouter>
-                </DisableLunaUstWarningProvider>
-              </SuccessfulTransactionModalProvider>
-            </AnalyticsProvider>
-          </AuthProvider>
-        </MuiThemeProvider>
-      </QueryClientProvider>
+                        <Switch />
+                      </Layout>
+                    </BrowserRouter>
+                  </DisableLunaUstWarningProvider>
+                </SuccessfulTransactionModalProvider>
+              </AnalyticsProvider>
+            </AuthProvider>
+          </MuiThemeProvider>
+        </QueryClientProvider>
+      </ApolloProvider>
     </Web3Wrapper>
   </ErrorLoggerProvider>
 );

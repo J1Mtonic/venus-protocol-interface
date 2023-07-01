@@ -1,0 +1,9 @@
+query getVaults($chainId: Int!, $xvsTokenAddress: String!) {
+  contracts(chainId: $chainId) {
+    xvsVault {
+      poolLength(rewardToken: $xvsTokenAddress)
+      rewardTokenAmountsPerBlock(arg0: $xvsTokenAddress)
+      totalAllocPoints(arg0: $xvsTokenAddress)
+    }
+  }
+}
