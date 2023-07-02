@@ -13,7 +13,6 @@ import { Pool } from 'types';
 import { isFeatureEnabled } from 'utilities';
 
 import { useGetPools } from 'clients/api';
-import useGetVaultsGraphQl from 'clients/api/queries/useGetVaultsGraphQl';
 import { MAINNET_TOKENS } from 'constants/tokens';
 import { MarketTable, MarketTableProps } from 'containers/MarketTable';
 import { useAuth } from 'context/AuthContext';
@@ -217,8 +216,6 @@ const Dashboard: React.FC = () => {
   const { data: getPoolData, isLoading: isGetPoolsLoading } = useGetPools({
     accountAddress,
   });
-
-  useGetVaultsGraphQl();
 
   return (
     <DashboardUi

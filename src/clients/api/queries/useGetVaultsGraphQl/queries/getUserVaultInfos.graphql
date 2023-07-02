@@ -1,7 +1,7 @@
 query getUserVaultInfos(
   $chainId: Int!
-  $getUserInfoInputs: [getUserInfoInput!]!
   $userAccountAddress: String!
+  $getUserInfoInputs: [getUserInfoInput!]!
   $pendingWithdrawalsBeforeUpgradeInputs: [pendingWithdrawalsBeforeUpgradeInput!]!
 ) {
   contracts(chainId: $chainId) {

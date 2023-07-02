@@ -51,6 +51,7 @@ const useGetVestingVaults = ({
     accountAddress,
     poolsCount: xvsVaultPoolCountData.poolCount,
   });
+
   const arePoolQueriesLoading = poolQueryResults.some(queryResult => queryResult.isLoading);
 
   // Index results by pool ID

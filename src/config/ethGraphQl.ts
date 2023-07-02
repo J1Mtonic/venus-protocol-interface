@@ -43,16 +43,16 @@ const ethGraphQlConfig: Config = {
     {
       name: 'vaiVault',
       address: {
-        [BscChainId.MAINNET]: mainnetContractInfos.Contracts.XVSVaultProxy,
-        [BscChainId.TESTNET]: testnetContractInfos.Contracts.XVSVaultProxy,
+        [BscChainId.MAINNET]: mainnetContractInfos.Contracts.VAIVaultProxy,
+        [BscChainId.TESTNET]: testnetContractInfos.Contracts.VAIVaultProxy,
       },
       abi: vaiVaultInfo.abi,
     },
     {
       name: 'comptroller',
       address: {
-        [BscChainId.MAINNET]: mainnetContractInfos.Contracts.Comptroller,
-        [BscChainId.TESTNET]: testnetContractInfos.Contracts.Comptroller,
+        [BscChainId.MAINNET]: mainnetContractInfos.Contracts.Unitroller,
+        [BscChainId.TESTNET]: testnetContractInfos.Contracts.Unitroller,
       },
       abi: comptrollerInfo.abi,
     },

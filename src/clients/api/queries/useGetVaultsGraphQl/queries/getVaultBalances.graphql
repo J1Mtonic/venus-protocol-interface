@@ -2,7 +2,7 @@ query getVaultBalances(
   $chainId: Int!
   $vestingVaultStakedTokenAddresses: [String!]!
   $xvsVaultProxyAddress: String!
-  $vaiVaultProxyAddress: String!
+  $vaiVaultAddress: String!
 ) {
   contracts(chainId: $chainId) {
     vestingVaultStakedTokens: bep20(addresses: $vestingVaultStakedTokenAddresses) {
@@ -10,7 +10,7 @@ query getVaultBalances(
     }
 
     vai {
-      balanceOf(account: $vaiVaultProxyAddress)
+      balanceOf(account: $vaiVaultAddress)
     }
   }
 }

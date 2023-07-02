@@ -3,7 +3,8 @@ import { Spinner } from 'components';
 import React from 'react';
 import { Vault } from 'types';
 
-import { useGetVaults } from 'clients/api';
+import useGetVaultsGraphQl from 'clients/api/queries/useGetVaultsGraphQl';
+// import { useGetVaults } from 'clients/api';
 import { useAuth } from 'context/AuthContext';
 
 import VaultItem from './VaultItem';
@@ -35,7 +36,8 @@ export const VaultUi: React.FC<VaultUiProps> = ({ vaults, isInitialLoading }) =>
 
 const VaultPage: React.FC = () => {
   const { accountAddress } = useAuth();
-  const { data: vaults, isLoading: isGetVaultsLoading } = useGetVaults({
+
+  const { data: vaults, isLoading: isGetVaultsLoading } = useGetVaultsGraphQl({
     accountAddress,
   });
 
