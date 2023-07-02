@@ -1,0 +1,16 @@
+query getVaultBalances(
+  $chainId: Int!
+  $vestingVaultStakedTokenAddresses: [String!]!
+  $xvsVaultProxyAddress: String!
+  $vaiVaultProxyAddress: String!
+) {
+  contracts(chainId: $chainId) {
+    vestingVaultStakedTokens: bep20(addresses: $vestingVaultStakedTokenAddresses) {
+      balanceOf(account: $xvsVaultProxyAddress)
+    }
+
+    vai {
+      balanceOf(account: $vaiVaultProxyAddress)
+    }
+  }
+}

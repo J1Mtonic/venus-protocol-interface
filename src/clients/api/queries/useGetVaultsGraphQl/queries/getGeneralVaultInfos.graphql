@@ -1,0 +1,20 @@
+query getGeneralVaultInfos($chainId: Int!, $xvsTokenAddress: String!, $vXvsTokenAddress: String!) {
+  contracts(chainId: $chainId) {
+    xvsVault {
+      poolLength(rewardToken: $xvsTokenAddress)
+      rewardTokenAmountsPerBlock(arg0: $xvsTokenAddress)
+      totalAllocPoints(arg0: $xvsTokenAddress)
+    }
+
+    comptroller {
+      venusVAIVaultRate
+    }
+
+    venusLens {
+      vTokenUnderlyingPrice(vToken: $vXvsTokenAddress) {
+        vToken
+        underlyingPrice
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { ApolloClient, ApolloLink, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { createLink } from 'eth-graphql';
 
 import config from 'config/ethGraphQl';

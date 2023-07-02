@@ -1,0 +1,13 @@
+query getVaults($chainId: Int!, $poolInfosInputs: [poolInfosInput!]!) {
+  contracts(chainId: $chainId) {
+    xvsVault {
+      poolInfos_MULT(args: $poolInfosInputs) {
+        token
+        allocPoint
+        lastRewardBlock
+        accRewardPerShare
+        lockPeriod
+      }
+    }
+  }
+}

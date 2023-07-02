@@ -71,6 +71,7 @@ module.exports = {
       'error',
       {
         varsIgnorePattern: '^_.+',
+        argsIgnorePattern: '^_.+',
       },
     ],
     '@typescript-eslint/member-delimiter-style': [

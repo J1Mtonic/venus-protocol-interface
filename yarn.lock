@@ -6827,6 +6827,11 @@
   resolved "https://registry.yarnpkg.com/@whatwg-node/events/-/events-0.0.3.tgz#13a65dd4f5893f55280f766e29ae48074927acad"
   integrity sha512-IqnKIDWfXBJkvy/k6tzskWTc2NK3LcqHlb+KHGCrjOCH4jfQckRX0NAiIcC/vIqQkzLYw2r2CTSwAxcrtcD6lA==
 
+"@whatwg-node/events@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@whatwg-node/events/-/events-0.1.1.tgz#0ca718508249419587e130da26d40e29d99b5356"
+  integrity sha512-AyQEn5hIPV7Ze+xFoXVU3QTHXVbWPrzaOkxtENMPMuNL6VVHrp4hHfDt9nrQpjO7BgvuM95dMtkycX5M/DZR3w==
+
 "@whatwg-node/fetch@^0.8.0":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@whatwg-node/fetch/-/fetch-0.8.8.tgz#48c6ad0c6b7951a73e812f09dd22d75e9fa18cae"
@@ -6900,11 +6905,6 @@
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.7.5.tgz#09fa51e356d07d0be200642b0e4f91d8e6dd408d"
   integrity sha512-V3BIhmY36fXZ1OtVcI9W+FxQqxVLsPKcNjWigIaa81dLC9IolJl5Mt4Cvhmr0flUnjSpTdrbMTSbXqYqV5dT6A==
-
-"@xtuc/long@4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
-  integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
 "@yarnpkg/esbuild-plugin-pnp@^3.0.0-rc.10":
   version "3.0.0-rc.15"
@@ -10251,10 +10251,10 @@ eth-block-tracker@6.1.0:
     json-rpc-random-id "^1.0.1"
     pify "^3.0.0"
 
-eth-graphql@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/eth-graphql/-/eth-graphql-1.1.0.tgz#9c042838e5a4153bcdfd8f49993aa1bfc3171add"
-  integrity sha512-kjAsJMzUNT2PfhnFjcYCJSNdAX8G37JLsWqyqoWNri7ZIhC0PHJG+6bQ4TwA5jvWf71b/qB7HWxUr1SyxJi6YA==
+eth-graphql@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/eth-graphql/-/eth-graphql-1.1.2.tgz#66b5be791e5b314b669a2c855680ee84db92abbb"
+  integrity sha512-bsO5Yw7zfdqKFNmlGTowpfsjVgoO//yRJ4annDhpucNDDUacEVMuPNQyUMkrYkCMg6AhtqBILcz0b3TWj6xGpw==
   dependencies:
     "@0xsequence/multicall" "^0.43.30"
     commander "^10.0.1"

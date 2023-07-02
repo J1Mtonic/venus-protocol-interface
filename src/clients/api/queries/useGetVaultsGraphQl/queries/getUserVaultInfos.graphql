@@ -1,0 +1,24 @@
+query getUserVaultInfos(
+  $chainId: Int!
+  $getUserInfoInputs: [getUserInfoInput!]!
+  $userAccountAddress: String!
+  $pendingWithdrawalsBeforeUpgradeInputs: [pendingWithdrawalsBeforeUpgradeInput!]!
+) {
+  contracts(chainId: $chainId) {
+    xvsVault {
+      getUserInfo_MULT(args: $getUserInfoInputs) {
+        amount
+        rewardDebt
+        pendingWithdrawals
+      }
+      pendingWithdrawalsBeforeUpgrade_MULT(args: $pendingWithdrawalsBeforeUpgradeInputs)
+    }
+
+    vaiVault {
+      userInfo(arg0: $userAccountAddress) {
+        amount
+        rewardDebt
+      }
+    }
+  }
+}
