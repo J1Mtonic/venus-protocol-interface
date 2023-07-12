@@ -128,15 +128,23 @@ const formatToPools = ({
         ),
       );
 
+      const underlyingDecimals = vTokenMetaData.underlyingDecimals.toNumber();
+
       const {
         apyPercentage: supplyApyPercentage,
         dailyDistributedTokens: supplyDailyDistributedTokens,
-      } = calculateApy(new BigNumber(vTokenMetaData.supplyRatePerBlock.toString()));
+      } = calculateApy({
+        ratePerBlockMantissa: new BigNumber(vTokenMetaData.supplyRatePerBlock.toString()),
+        decimals: underlyingDecimals,
+      });
 
       const {
         apyPercentage: borrowApyPercentage,
         dailyDistributedTokens: borrowDailyDistributedTokens,
-      } = calculateApy(new BigNumber(vTokenMetaData.borrowRatePerBlock.toString()));
+      } = calculateApy({
+        ratePerBlockMantissa: new BigNumber(vTokenMetaData.borrowRatePerBlock.toString()),
+        decimals: underlyingDecimals,
+      });
 
       const supplyRatePerBlockTokens = supplyDailyDistributedTokens.dividedBy(BLOCKS_PER_DAY);
       const borrowRatePerBlockTokens = borrowDailyDistributedTokens.dividedBy(BLOCKS_PER_DAY);
